@@ -88,16 +88,12 @@
     <script>
       MP.api.setCredentials("fb5cd548015d767999059038755ce6b3");
       
-      $('#table').append('<table id="resultsTable"></table>');
-      $('table#resultsTable').append('<tbody>');
-      
       var dateSelect  = $('#dateSelect').MPDatepicker();
-      var eventTable  = $('#table').MPTable({
-        showPercentages: true,
-        firstColHeader: 'Event'
-      });
         
       var runQuery = function() {
+        $('#table').append('<table id="resultsTable"></table>');
+        $('table#resultsTable').append('<tbody>');
+        
         var dateRange = dateSelect.MPDatepicker('value');
         
         var script = document.getElementById('script').innerHTML;
@@ -143,13 +139,13 @@
               $('table#resultsTable').append('<tr><td>' + keys[i] + ': ' + item[keys[i]] + '</td><td></td></tr>');
             }
           }
-          $('table#resultsTable').append('<tr><td>====================</td><td>====================</td></tr>');
+          $('table#resultsTable').append('<tr><td>==============================</td><td>==============================</td></tr>');
           count++;
         });
         $('table#resultsTable').append('</tbody>');
       }
 
-      $('#run').on('click', function() { runQuery(); });
+      $('#run').on('click', function() { $('table#resultsTable').remove(); runQuery(); });
     </script>
   </body>
 </html>
