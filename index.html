@@ -144,10 +144,11 @@
           }
           $('table#resultsTable').append('<tr><td>====================</td><td>====================</td></tr>');
           count++;
-        })
+        });
+        $('table#resultsTable').append('</tbody>');
       }
 
-      $('#run').on('click', function() { $('table#resultsTable').remove(); runQuery(); });
+      $('#run').on('click', function() { $('#resultsTable').remove(); runQuery(); });
     </script>
   </body>
 </html>
