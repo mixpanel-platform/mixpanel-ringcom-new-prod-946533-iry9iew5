@@ -125,6 +125,7 @@
       };
       
       var renderGraph = function(data) {
+        console.log(data);
         var count = 1;
         _.each(data, function(item) {
           $('table#resultsTable').append('<tr><td>' + count + '. Event: ' + item.Event + '</td><td>Time: ' + new Date(item.Time) + '</td></tr>');
